@@ -518,6 +518,7 @@ fieldset[disabled] .btn-theme {
 /* Fixed Top */
 .navbar-fixed-top .navbar-collapse {
   max-height: 100%;
+  background:transparent;
 }
 
 /* Navbar */
@@ -710,7 +711,7 @@ fieldset[disabled] .btn-theme {
   /* Bootstrap collapse of navigation with a maximum width: 991px
     (Change it to any breakpoint you want to be collapsed) */
   .header {
-    background: #fff;
+    background: transparent;
   }
   .header .navbar-toggle {
     display: block;
@@ -724,10 +725,12 @@ fieldset[disabled] .btn-theme {
   .header .nav-collapse {
     padding-left: 0;
     padding-right: 0;
+    background:transparent;
   }
   .header .navbar-nav {
     margin: 0;
     float: none;
+        background:transparent;
   }
   .header .navbar-nav .nav-item {
     float: none;
@@ -774,12 +777,15 @@ fieldset[disabled] .btn-theme {
     padding-right: 0;
     margin-left: 0;
     margin-right: 0;
+        background:transparent;
   }
   .header .navbar > .container > .nav-collapse {
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
     margin-right: 0;
+    background-color:transparent;
+    
   }
 }
 
@@ -794,7 +800,7 @@ fieldset[disabled] .btn-theme {
 /* Page On Scroll */
 @media (min-width: 992px) {
   .page-on-scroll .header .navbar {
-    background: #fff;
+   background-color:transparent;
     border-bottom-color: #f0f0f0;
     transition-duration: 300ms;
     transition-property: all;
@@ -807,12 +813,14 @@ fieldset[disabled] .btn-theme {
     transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
   }
   .page-on-scroll .header .logo-img-active {
+  
     display: inline-block;
     transition-duration: 400ms;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
   }
   .page-on-scroll .header .nav-item-child {
+      background-color:transparent;
     color: #515769;
     transition-duration: 300ms;
     transition-property: all;
@@ -842,7 +850,7 @@ fieldset[disabled] .btn-theme {
   height: 40px;
   font-size: 11px;
   font-weight: 400;
-  color: #fff;
+  color: transparent;
   text-align: center;
   line-height: 3;
   letter-spacing: 1px;
@@ -861,7 +869,7 @@ fieldset[disabled] .btn-theme {
 }
 
 .back-to-top:hover {
-  color: #fff;
+  background-color:transparent;
   transition-duration: 300ms;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
@@ -976,7 +984,7 @@ fieldset[disabled] .btn-theme {
 .carousel-title {
   font-size: 80px;
   font-weight: 700;
-  color: #fff;
+  color: transparent;
   line-height: 1.1;
   text-transform: uppercase;
 }
@@ -1193,7 +1201,7 @@ fieldset[disabled] .btn-theme {
 }
 
 .bg-color-white {
-  background: #fff;
+  background: transparent;
 }
 
 .bg-color-heading {

@@ -18,9 +18,11 @@
 	rel="stylesheet" type="text/css" />
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	type="text/css" />
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa Slab One" rel="stylesheet"
+	type="text/css">
 <!-- PAGE LEVEL PLUGIN STYLES -->
 <link href="css/animate.css" rel="stylesheet">
+<link href="css/utility.css" rel="stylesheet">
 <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet"
 	type="text/css" />
 
@@ -62,17 +64,22 @@
             <!-- Navbar -->
         </header>
 	<br><br><br><br><br><br><br><br><br>
-	<div >
-	<center>
+	
+	<div style="position:relative; float:left; padding-left:100px;">
+	<h1 style="font-family:'Alfa Slab One'; text-shadow: 3px 3px 3px #ababab; color:black">Spartan Gym</h1><br>
+	<p style="font-size:20px">Inserisci i dati per effettuare l'accesso al sito</p></div>
+	<div style="position:relative; float:left;padding-left:200px;">
+
 	<b><i>Inserisci i dati per effettuare il Login</i></b>
 	<form name="Login" action="RichiediLogin" method="post"><br>
 		Username: <input type="text" name="username" id="username"> <br><br>
 		&nbsp;Password: <input type="password" name="password" id="password"> <br><br>
-		<input type="submit" value="Accedi">
+		<input type="submit" style="width:250px; height:30px"value="Accedi">
 	</form>
-</center>
    <br><br>
-	</div>
+   </div>
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<footer class="footer">
 		<!-- Links -->
 		<div class="footer-seperator">
