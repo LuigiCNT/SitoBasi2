@@ -71,7 +71,7 @@
 	<div style="position:relative; float:left;padding-left:200px;">
 
 	<b><i>Inserisci i dati per effettuare il Login</i></b>
-	<form name="Login" action="RichiediLogin" method="post"><br>
+	<form name="Login" action="/Login.java" method="post"><br>
 		Username: <input type="text" name="username" id="username"> <br><br>
 		&nbsp;Password: <input type="password" name="password" id="password"> <br><br>
 		<input type="submit" style="width:250px; height:30px"value="Accedi">

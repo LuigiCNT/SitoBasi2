@@ -138,5 +138,25 @@ public class UtenteDAO {
 		System.out.println(esito);
 		return esito;
 	}
-
+	
+	public boolean LoginUtente(Utente utente) {
+		boolean esito=false;
+		String query="SELECT * FROM utente where nome=? and password =? ";
+		PreparedStatement ps;
+		Connection conn=DBManager.startConnection();
+		try {
+		ps = conn.prepareStatement(query);
+		
+		ps.setString(1, utente.getUsername() );
+		
+		ps.setString(2, utente.getPassword() );
+		int tmp=ps.executeUpdate();
+		if (tmp==1)
+		esito=true;
+		} catch (SQLException e) {
+		e.printStackTrace();
+		}
+		DBManager.closeConnection();
+		return esito;
+	}
 }
