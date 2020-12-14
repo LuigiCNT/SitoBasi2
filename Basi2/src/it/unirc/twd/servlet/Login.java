@@ -48,11 +48,11 @@ public class Login extends HttpServlet {
         
         if (uDAO.LoginUtente(utente)) {
 		    HttpSession session = request.getSession();
-		    // session.setAttribute("username",username);
-		    response.sendRedirect("LoginSuccesso.jsp");
+		    session.setAttribute("username",username);
+		    response.sendRedirect("AreaRiservataUtente.jsp");
 		} else {
 		    HttpSession session = request.getSession();
-		    //session.setAttribute("user", username);
+		   session.setAttribute("user", username);
 		    response.sendRedirect("Login.jsp");
 		}
 	}

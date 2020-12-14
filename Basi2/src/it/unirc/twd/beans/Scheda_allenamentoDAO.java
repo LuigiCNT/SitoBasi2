@@ -1,5 +1,6 @@
 package it.unirc.twd.beans;
 
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,6 +26,7 @@ public class Scheda_allenamentoDAO {
 				res.setUsername(rs.getString("username"));
 				res.setTipologia(rs.getString("Tipologia"));
 				res.setData(rs.getDate("Data"));
+				res.setScheda(rs.getBlob("Scheda"));
 			}
 		}catch(Exception e) {
 			e.getStackTrace();
@@ -33,7 +35,7 @@ public class Scheda_allenamentoDAO {
 		return res;
 	}
 	public boolean SalvaScheda_allenamento(Scheda_allenamento sa) {
-		String query = "INSERT INTO Username VALUES (?, ?, ?)";
+		String query = "INSERT INTO Username VALUES (?, ?, ?, ?)";
 		boolean esito=false;
 		conn=DBManager.startConnection();
 		try {
@@ -41,6 +43,7 @@ public class Scheda_allenamentoDAO {
 			ps.setString(1, sa.getUsername());
 			ps.setString(2, sa.getTipologia());
 			ps.setDate(3, sa.getData());
+			ps.setBlob(4, sa.getScheda());
 			int tmp=ps.executeUpdate();
 			if(tmp==1) {
 				esito=true;
@@ -77,6 +80,7 @@ public class Scheda_allenamentoDAO {
 			ps.setString(1, sa.getTipologia());
 			ps.setDate(2, sa.getData());
 			ps.setString(3, sa.getUsername());
+			ps.setBlob(4, sa.getScheda());
 			int tmp=ps.executeUpdate();
 			if(tmp==1) {
 				esito=true;
@@ -105,12 +109,31 @@ public class Scheda_allenamentoDAO {
 		return list;
 	}
 
+	public boolean ScaricaScheda() {
+		String query = "SELECT Scheda FROM Scheda_allenamento WHERE Username = ? ";
+		boolean esito= false;
+		conn=DBManager.startConnection();
+		try {
+			PreparedStatement ps=conn.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			int tmp=ps.executeUpdate();
+			if(tmp==1) {
+				esito=true;
+			}
+		}catch(Exception e) {
+			e.getStackTrace();
+		}
+		DBManager.closeConnection();
+		return esito;
+	}
+
+
 	protected Scheda_allenamento recordToScheda_allenamento(ResultSet rs) throws SQLException {
 		Scheda_allenamento res=new Scheda_allenamento();
 		res.setUsername(rs.getString("Username"));
 		res.setTipologia(rs.getString("Tipologia"));
-
 		res.setData(rs.getDate("Data"));
+		res.setScheda(rs.getBlob("Scheda"));
 		return res;
 
 	}
